@@ -1,0 +1,17 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.active {
+  font-size: 22px;
+  color: var(--color-text);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.popoverWrapper {
+  max-width: 300px;
+}

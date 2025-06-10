@@ -1,0 +1,11 @@
+.wrapper {
+  background-color: var(--color-bg);
+  height: auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  border: 1px solid var(--color-border-dark);
+  padding: 16px;
+}

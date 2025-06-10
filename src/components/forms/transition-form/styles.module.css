@@ -1,0 +1,26 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.wrapperForm {
+  width: 500px;
+}
+
+.cancelButton {
+  margin-left: 12px;
+}
+
+.wrapperCategories {
+  width: 100%;
+  display: flex;
+  gap: 8px;
+
+  & > div {
+    width: 100%;
+  }
+}

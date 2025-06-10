@@ -1,0 +1,18 @@
+.headerWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  background-color: var(--color-bg);
+  padding: 0 32px;
+  border-bottom: 1px solid var(--color-indigo-secondary);
+}
+
+.balanceText {
+  color: var(--color-indigo);
+}
+
+.selectWrapper {
+  width: 150px;
+  margin-right: auto;
+}
