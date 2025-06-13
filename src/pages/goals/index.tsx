@@ -4,22 +4,22 @@ import { notification, Space, Typography } from 'antd';
 import { BaseCardLayout } from '@/components/common-components/base-card-layout';
 import { GoalsTable } from '@/components/common-components/goals-table';
 import { GoalForm } from '@/components/forms/goal-form';
-import { NotificationType, useNotificationStore } from '@/store/notificationStore';
-import { useUserStore } from '@/store/userStore';
+import { notificationStore, NotificationType } from '@/store/notificationStore';
+import { userStore } from '@/store/userStore';
 
 import { INIT_VALUES } from './constants';
 
 import styles from './styles.module.css';
 
 export const GoalsPage = () => {
-  const { notification: notificationData, removeNotification } = useNotificationStore();
+  const { notification: notificationData } = notificationStore;
   const [api] = notification.useNotification();
-  const { user } = useUserStore();
+  const { user } = userStore;
 
   useEffect(() => {
     if (notificationData?.type) {
       viewNotification(notificationData);
-      removeNotification();
+      notificationStore.removeNotification();
     }
   }, [notificationData]);
 

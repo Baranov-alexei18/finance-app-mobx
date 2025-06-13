@@ -2,22 +2,21 @@ import { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router';
 import { DownOutlined, EyeInvisibleOutlined, EyeOutlined, UserOutlined } from '@ant-design/icons';
 import { Avatar, Button, Dropdown, Flex, Layout, MenuProps, Select, Space } from 'antd';
+import { observer } from 'mobx-react-lite';
 
 import { GRANULARITY } from '@/constants/granularity';
-import { useGranularityStore } from '@/store/granularityStore';
+import { ROUTE_PATHS } from '@/constants/route-path';
+import { granularityStore } from '@/store/granularityStore';
+import { userStore } from '@/store/userStore';
 import { calculateBalance } from '@/utils/calculate-balance';
-
-import { ROUTE_PATHS } from '../../constants/route-path';
-import { useUserStore } from '../../store/userStore';
 
 import styles from './styles.module.css';
 
 const { Header } = Layout;
 
-export const HeaderApp = () => {
+export const HeaderApp = observer(() => {
   const navigate = useNavigate();
-  const { user } = useUserStore();
-  const { setGranularityType } = useGranularityStore();
+  const { user } = userStore;
 
   const [balanceVisible, setBalanceVisible] = useState(
     sessionStorage.getItem('isBalanceVisible') === 'true'
@@ -40,7 +39,8 @@ export const HeaderApp = () => {
   };
 
   const handleChange = (value: keyof typeof GRANULARITY) => {
-    setGranularityType(value);
+    if (!value) return;
+    granularityStore.setGranularityType(value);
   };
 
   const menuItems: MenuProps['items'] = [
@@ -66,7 +66,7 @@ export const HeaderApp = () => {
     },
     {
       label: (
-        <Button color="danger" variant="solid" onClick={handleExit} style={{ width: '100%' }}>
+        <Button danger onClick={handleExit} style={{ width: '100%' }}>
           Выйти
         </Button>
       ),
@@ -74,20 +74,21 @@ export const HeaderApp = () => {
     },
   ];
 
-  const periodItems = Object.keys(GRANULARITY).map((item) => ({
-    value: item,
-    label: GRANULARITY[item as keyof typeof GRANULARITY],
+  const periodItems = Object.entries(GRANULARITY).map(([key, label]) => ({
+    value: key,
+    label,
   }));
 
   return (
     <Header className={styles.headerWrapper}>
       <Select
-        defaultValue={'month'}
         className={styles.selectWrapper}
         size="large"
+        defaultValue={granularityStore.type}
         onChange={handleChange}
         options={periodItems}
       />
+
       <Dropdown menu={{ items: menuItems }} trigger={['click']}>
         <a onClick={(e) => e.preventDefault()}>
           <Space wrap align="center">
@@ -104,4 +105,4 @@ export const HeaderApp = () => {
       </Dropdown>
     </Header>
   );
-};
+});

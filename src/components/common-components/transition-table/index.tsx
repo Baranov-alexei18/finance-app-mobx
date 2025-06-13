@@ -10,8 +10,8 @@ import {
   EDIT_TRANSITION,
   REGISTER_CREATE_TRANSITION,
 } from '@/lib/graphQL/transition';
-import { useNotificationStore } from '@/store/notificationStore';
-import { useUserStore } from '@/store/userStore';
+import { notificationStore } from '@/store/notificationStore';
+import { userStore } from '@/store/userStore';
 import { TransitionEnum, TransitionType } from '@/types/transition';
 import { getCapitalizeFirstLetter } from '@/utils/get-capitalize-first-letter';
 
@@ -28,11 +28,9 @@ export type TransitionEditType = Omit<TransitionType, 'category'> & {
 };
 
 export const TransitionTable = ({ transitions }: Props) => {
-  const { deleteTransactionById, updateTransactionById } = useUserStore((state) => state);
   const [deleteTransition, { loading: removeLoading }] = useMutation(DELETE_TRANSITION);
   const [updateTransition, { loading: updateLoading }] = useMutation(EDIT_TRANSITION);
   const [publishTransition] = useMutation(REGISTER_CREATE_TRANSITION);
-  const { setNotification } = useNotificationStore();
 
   const [isEditModalVisible, setIsEditModalVisible] = useState(false);
   const [isDeleteModalVisible, setIsDeleteModalVisible] = useState(false);
@@ -80,15 +78,15 @@ export const TransitionTable = ({ transitions }: Props) => {
         throw new Error('Не удалось сохранить изменения Запись');
       }
 
-      updateTransactionById(transitionId.publishTransition.id, data.updateTransition);
+      userStore.updateTransactionById(transitionId.publishTransition.id, data.updateTransition);
 
-      setNotification({
+      notificationStore.setNotification({
         type: 'success',
         message: 'Запись изменена',
         description: 'Запись успешно обновлена',
       });
     } catch (e) {
-      setNotification({
+      notificationStore.setNotification({
         type: 'error',
         message: 'Ошибка',
         description: String(e),
@@ -102,15 +100,15 @@ export const TransitionTable = ({ transitions }: Props) => {
     try {
       await deleteTransition({ variables: { id: record.id } });
 
-      deleteTransactionById(record.id);
+      userStore.deleteTransactionById(record.id);
 
-      setNotification({
+      notificationStore.setNotification({
         type: 'success',
         message: 'Выполнено',
         description: 'Запись успешно удалена',
       });
     } catch (e) {
-      setNotification({
+      notificationStore.setNotification({
         type: 'error',
         message: 'Ошибка',
         description: String(e),

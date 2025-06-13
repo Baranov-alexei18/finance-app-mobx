@@ -1,16 +1,18 @@
 import { useEffect } from 'react';
 import { Flex, notification } from 'antd';
+import { observer } from 'mobx-react-lite';
 
 import { EditProfileForm } from '@/components/forms/edit-profile-form';
-import { AVATAR_IDS, useAvatarStore } from '@/store/avatarStore';
-import { NotificationType, useNotificationStore } from '@/store/notificationStore';
+import { AVATAR_IDS, avatarStore } from '@/store/avatarStore';
+import { notificationStore, NotificationType } from '@/store/notificationStore';
 
 import styles from './styles.module.css';
 
-export const EditPage = () => {
-  const { notification: notificationData, removeNotification } = useNotificationStore();
+export const EditPage = observer(() => {
+  const { notification: notificationData } = notificationStore;
   const [api] = notification.useNotification();
-  const { fetchAvatars } = useAvatarStore();
+
+  const { fetchAvatars } = avatarStore;
 
   useEffect(() => {
     fetchAvatars(AVATAR_IDS);
@@ -19,7 +21,7 @@ export const EditPage = () => {
   useEffect(() => {
     if (notificationData?.type) {
       viewNotification(notificationData);
-      removeNotification();
+      notificationStore.removeNotification();
     }
   }, [notificationData]);
 
@@ -48,4 +50,4 @@ export const EditPage = () => {
       </Flex>
     </div>
   );
-};
+});

@@ -4,19 +4,19 @@ import { notification, Tabs } from 'antd';
 
 import { AuthForm } from '@/components/forms/auth-form';
 import { RegisterForm } from '@/components/forms/register-form';
-import { NotificationType, useNotificationStore } from '@/store/notificationStore';
+import { notificationStore, NotificationType } from '@/store/notificationStore';
 
 import styles from './styles.module.css';
 
 export const AuthPage = () => {
   const [activeKey, setActiveKey] = useState('auth');
-  const { notification: notificationData, removeNotification } = useNotificationStore();
+  const { notification: notificationData } = notificationStore;
   const [api, contextHolder] = notification.useNotification();
 
   useEffect(() => {
     if (notificationData?.type) {
       viewNotification(notificationData);
-      removeNotification();
+      notificationStore.removeNotification();
     }
   }, [notificationData]);
 

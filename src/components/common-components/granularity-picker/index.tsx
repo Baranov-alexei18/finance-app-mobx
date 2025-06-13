@@ -3,9 +3,10 @@ import { LeftOutlined, RightOutlined } from '@ant-design/icons';
 import { Calendar } from 'antd';
 import { Popover } from 'antd';
 import { Dayjs } from 'dayjs';
+import { observer } from 'mobx-react-lite';
 
 import { GRANULARITY } from '@/constants/granularity';
-import { useGranularityStore } from '@/store/granularityStore';
+import { granularityStore } from '@/store/granularityStore';
 import { GRANULARITY_ENUM } from '@/types/granularity';
 
 import styles from './styles.module.css';
@@ -28,17 +29,19 @@ const formatByGranularity: Record<GranularityKey, (date: Dayjs) => string> = {
   all: () => 'За все время',
 };
 
-export const GranularityPicker = () => {
-  const { type, period, setGranularityPeriod } = useGranularityStore();
+export const GranularityPicker = observer(() => {
+  const { type, period } = granularityStore;
   const [open, setOpen] = useState(false);
 
-  const handleArrowClick = (dir: 'prev' | 'next') => {
+  const formattedPeriod = period ? formatByGranularity[type](period) : '';
+
+  const handleArrowClick = (direction: 'prev' | 'next') => {
     const stepFunc = granularitySteps[type];
-    setGranularityPeriod(stepFunc(period!, dir));
+    granularityStore.setGranularityPeriod(stepFunc(period!, direction));
   };
 
   const handleSelect = (date: Dayjs) => {
-    setGranularityPeriod(date);
+    granularityStore.setGranularityPeriod(date);
     setOpen(false);
   };
 
@@ -64,7 +67,7 @@ export const GranularityPicker = () => {
           className={styles.popoverWrapper}
         >
           <div onClick={() => setOpen(true)} className={styles.active}>
-            {formatByGranularity[type](period!)}
+            {formattedPeriod}
           </div>
         </Popover>
       )}
@@ -73,4 +76,4 @@ export const GranularityPicker = () => {
       )}
     </div>
   );
-};
+});

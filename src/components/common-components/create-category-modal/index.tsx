@@ -4,8 +4,8 @@ import { useMutation } from '@apollo/client';
 import { Button, ColorPicker, Input, List, Modal, Popconfirm, Tooltip } from 'antd';
 
 import { DELETE_CATEGORY, EDIT_CATEGORY, REGISTER_CREATE_CATEGORY } from '@/lib/graphQL/category';
-import { useNotificationStore } from '@/store/notificationStore';
-import { useUserStore } from '@/store/userStore';
+import { notificationStore } from '@/store/notificationStore';
+import { userStore } from '@/store/userStore';
 import { TransitionEnum } from '@/types/transition';
 import { getCapitalizeFirstLetter } from '@/utils/get-capitalize-first-letter';
 
@@ -30,9 +30,6 @@ type DeleteCategoryProps = {
 const BLACK_COLOR = '#000000';
 
 export const CreateCategoryModal = ({ type, loading, isOpen, onClose, onAddCategory }: Props) => {
-  const { getCategoriesByType, updateCategoryById, deleteCategoryById } = useUserStore();
-  const { setNotification } = useNotificationStore();
-
   const [editCategory] = useMutation<EditCategoryProps>(EDIT_CATEGORY);
   const [deleteCategory] = useMutation<DeleteCategoryProps>(DELETE_CATEGORY);
   const [publishCategory] = useMutation(REGISTER_CREATE_CATEGORY);
@@ -42,7 +39,7 @@ export const CreateCategoryModal = ({ type, loading, isOpen, onClose, onAddCateg
   const [editingId, setEditingId] = useState<string | null>(null);
   const [editedName, setEditedName] = useState('');
 
-  const categories = getCategoriesByType(TransitionEnum[type]);
+  const categories = userStore.getCategoriesByType(TransitionEnum[type]);
 
   const handleClose = () => {
     onClose();
@@ -83,15 +80,15 @@ export const CreateCategoryModal = ({ type, loading, isOpen, onClose, onAddCateg
         throw new Error('Не удалось сохранить изменения категории');
       }
 
-      updateCategoryById(data.updateCategory.id, dataCategory);
+      userStore.updateCategoryById(data.updateCategory.id, dataCategory);
 
-      setNotification({
+      notificationStore.setNotification({
         type: 'success',
         message: 'Категория изменена',
         description: 'Категория успешно обновлена',
       });
     } catch (e) {
-      setNotification({
+      notificationStore.setNotification({
         type: 'error',
         message: 'Ошибка',
         description: String(e),
@@ -107,15 +104,15 @@ export const CreateCategoryModal = ({ type, loading, isOpen, onClose, onAddCateg
         },
       });
 
-      deleteCategoryById(id);
+      userStore.deleteCategoryById(id);
 
-      setNotification({
+      notificationStore.setNotification({
         type: 'success',
         message: 'Выполнено',
         description: 'Категория успешно удалена',
       });
     } catch (e) {
-      setNotification({
+      notificationStore.setNotification({
         type: 'error',
         message: 'Ошибка',
         description: String(e),

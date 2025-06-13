@@ -1,29 +1,30 @@
 import { useEffect, useMemo } from 'react';
 import { BaseCardLayout } from '@components/common-components/base-card-layout';
 import { TransitionForm } from '@components/forms/transition-form';
-import { NotificationType, useNotificationStore } from '@store/notificationStore';
+import { notificationStore, NotificationType } from '@store/notificationStore';
 import { Flex, notification, Space } from 'antd';
 import dayjs from 'dayjs';
+import { observer } from 'mobx-react-lite';
 
 import { ExplorerChart } from '@/components/charts/explorer';
 import { PieChart } from '@/components/charts/pie';
 import { GranularityPicker } from '@/components/common-components/granularity-picker';
 import { TransitionTable } from '@/components/common-components/transition-table';
-import { useGranularityStore } from '@/store/granularityStore';
-import { useUserStore } from '@/store/userStore';
+import { granularityStore } from '@/store/granularityStore';
+import { userStore } from '@/store/userStore';
 import { GRANULARITY_ENUM } from '@/types/granularity';
 import { TransitionEnum } from '@/types/transition';
 
 import styles from './styles.module.css';
 
-export const IncomePage = () => {
-  const { notification: notificationData, removeNotification } = useNotificationStore();
+export const IncomePage = observer(() => {
+  const { notification: notificationData } = notificationStore;
   const [api] = notification.useNotification();
-  const { user, getTransactionsByType, loading } = useUserStore();
-  const { period, type } = useGranularityStore();
+  const { user, loading } = userStore;
+  const { period, type } = granularityStore;
 
   const incomeTransitions = useMemo(() => {
-    const transitionsIncome = getTransactionsByType(TransitionEnum.INCOME);
+    const transitionsIncome = userStore.getTransactionsByType(TransitionEnum.INCOME);
 
     if (type === GRANULARITY_ENUM.all) {
       return transitionsIncome;
@@ -36,12 +37,12 @@ export const IncomePage = () => {
       const date = new Date(item.date);
       return date >= start && date <= end;
     });
-  }, [getTransactionsByType, user, period, type]);
+  }, [user, period, type]);
 
   useEffect(() => {
     if (notificationData?.type) {
       viewNotification(notificationData);
-      removeNotification();
+      notificationStore.removeNotification();
     }
   }, [notificationData]);
 
@@ -86,4 +87,4 @@ export const IncomePage = () => {
       </BaseCardLayout>
     </div>
   );
-};
+});

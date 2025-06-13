@@ -1,16 +1,15 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import { create } from 'zustand';
+import { makeAutoObservable } from 'mobx';
 
 import { CategoryType } from '@/types/category';
 import { GoalType } from '@/types/goal';
 import { TransitionEnum, TransitionType } from '@/types/transition';
 import { UserType } from '@/types/user';
 
-type Props = {
+interface Props {
   user: UserType | null;
   loading: boolean;
   error: Error | null;
-  setUser: (user: UserType | null) => any;
+  setUser: (user: UserType | null) => void;
   getTransactionsByType: (type: TransitionEnum) => TransitionType[];
   getCategoriesByType: (type: TransitionEnum) => CategoryType[];
   addNewTransaction: (transaction: TransitionType) => void;
@@ -20,55 +19,63 @@ type Props = {
   updateCategoryById: (id: string, updatedFields: Partial<CategoryType>) => void;
   deleteCategoryById: (id: string) => void;
   addNewGoal: (goal: GoalType) => void;
-};
+}
 
-export const useUserStore = create<Props>((set, get) => ({
-  user: null,
-  loading: false,
-  error: null,
-  setUser: (user: UserType | null) => set({ user }),
+class UserStore implements Props {
+  user: Props['user'] = null;
+  loading = false;
+  error: Props['error'] = null;
 
+  constructor() {
+    makeAutoObservable(this);
+  }
+
+  setUser(user: UserType | null) {
+    this.user = user;
+  }
+
+  setLoading(load: boolean) {
+    this.loading = load;
+  }
+
+  setError(error: Error | null) {
+    this.error = error;
+  }
   // user transitions
-  getTransactionsByType: (type) => {
-    const { user } = get();
-    if (!user || !user?.transitions) {
+  getTransactionsByType(type: TransitionEnum) {
+    if (!this.user || !this.user?.transitions) {
       return [];
     }
-    return user.transitions.filter((transaction: TransitionType) => transaction.type === type);
-  },
+    return this.user.transitions.filter((transaction: TransitionType) => transaction.type === type);
+  }
 
-  addNewTransaction: (transition: TransitionType) => {
-    const { user } = get();
-
-    if (!user) {
+  addNewTransaction(transition: TransitionType) {
+    if (!this.user) {
       return;
     }
 
-    set({
-      user: {
-        ...user,
-        transitions: [...user.transitions, transition],
-        goals: transition.goal
-          ? user.goals.map((goal) =>
-              goal.id === transition.goal?.id
-                ? { ...goal, transitions: [...(goal.transitions || []), transition] }
-                : goal
-            )
-          : user.goals,
-      },
-    });
-  },
+    this.user = {
+      ...this.user,
+      transitions: [...this.user.transitions, transition],
+      goals: transition.goal
+        ? this.user.goals.map((goal: GoalType) =>
+            goal.id === transition.goal?.id
+              ? { ...goal, transitions: [...(goal.transitions || []), transition] }
+              : goal
+          )
+        : this.user.goals,
+    };
+  }
 
-  updateTransactionById: (id: string, updatedFields: Partial<TransitionType>) => {
-    const { user } = get();
-    if (!user) return;
+  updateTransactionById(id: string, updatedFields: Partial<TransitionType>) {
+    if (!this.user) return;
 
-    const updatedTransitions = user.transitions.map((transition) =>
+    const updatedTransitions = this.user?.transitions.map((transition) =>
       transition.id === id ? { ...transition, ...updatedFields } : transition
     );
 
     const updatedGoals = updatedFields.goal
-      ? user.goals.map((goal) =>
+      ? this.user.goals.map((goal) =>
           goal.id === updatedFields.goal?.id
             ? {
                 ...goal,
@@ -78,89 +85,78 @@ export const useUserStore = create<Props>((set, get) => ({
               }
             : goal
         )
-      : user.goals;
+      : this.user.goals;
 
-    set({
-      user: {
-        ...user,
-        transitions: updatedTransitions,
-        goals: updatedGoals,
-      },
-    });
-  },
+    this.user = {
+      ...this.user,
+      transitions: updatedTransitions,
+      goals: updatedGoals,
+    };
+  }
 
-  deleteTransactionById: (id: string) => {
-    const { user } = get();
-    if (!user) return;
+  deleteTransactionById(id: string) {
+    if (!this.user) return;
 
-    const updatedTransitions = user.transitions.filter((transition) => transition.id !== id);
+    const updatedTransitions = this.user.transitions.filter((transition) => transition.id !== id);
 
-    const updatedGoals = user.goals.map((goal) => ({
+    const updatedGoals = this.user.goals.map((goal) => ({
       ...goal,
       transitions: goal.transitions?.filter((t) => t.id !== id),
     }));
 
-    set({
-      user: {
-        ...user,
-        transitions: updatedTransitions,
-        goals: updatedGoals,
-      },
-    });
-  },
+    this.user = {
+      ...this.user,
+      transitions: updatedTransitions,
+      goals: updatedGoals,
+    };
+  }
 
   // user categories
-  getCategoriesByType: (type) => {
-    const { user } = get();
-    if (!user || !user?.categories) {
+  getCategoriesByType(type: string) {
+    if (!this.user || !this.user?.categories) {
       return [];
     }
-    return user.categories.filter((category: CategoryType) => category.type === type);
-  },
-  addNewCategory: (category: CategoryType) => {
-    const { user } = get();
+    return this.user.categories.filter((category: CategoryType) => category.type === type);
+  }
 
-    if (!user) {
+  addNewCategory(category: CategoryType) {
+    if (!this.user) {
       return;
     }
 
-    set({ user: { ...user, categories: [...user.categories, category] } });
-  },
+    this.user = { ...this.user, categories: [...this.user.categories, category] };
+  }
 
-  updateCategoryById: (id: string, updatedFields: Partial<CategoryType>) => {
-    const { user } = get();
-
-    if (!user) {
+  updateCategoryById(id: string, updatedFields: Partial<CategoryType>) {
+    if (!this.user) {
       return;
     }
 
-    const updatedCategories = user.categories.map((category) =>
+    const updatedCategories = this.user.categories.map((category) =>
       category.id === id ? { ...category, ...updatedFields } : category
     );
 
-    set({ user: { ...user, categories: updatedCategories } });
-  },
+    this.user = { ...this.user, categories: updatedCategories };
+  }
 
-  deleteCategoryById: (id: string) => {
-    const { user } = get();
-
-    if (!user) {
+  deleteCategoryById(id: string) {
+    if (!this.user) {
       return;
     }
 
-    const updatedCategories = user.categories.filter((category) => category.id !== id);
+    const updatedCategories = this.user.categories.filter((category) => category.id !== id);
 
-    set({ user: { ...user, categories: updatedCategories } });
-  },
+    this.user = { ...this.user, categories: updatedCategories };
+  }
 
   // user goals
-  addNewGoal: (goal: GoalType) => {
-    const { user } = get();
-
-    if (!user) {
+  addNewGoal(goal: GoalType) {
+    if (!this.user) {
       return;
     }
 
-    set({ user: { ...user, goals: [...user.goals, goal] } });
-  },
-}));
+    this.user = { ...this.user, goals: [...this.user.goals, goal] };
+  }
+}
+
+export const userStore = new UserStore();

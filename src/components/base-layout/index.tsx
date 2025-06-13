@@ -5,10 +5,11 @@ import { Outlet, useLocation } from 'react-router';
 import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons';
 import { useLazyQuery } from '@apollo/client';
 import { Button, Layout, Menu, notification } from 'antd';
+import { observer } from 'mobx-react-lite';
 
 import { GET_USER_BY_ID } from '@/lib/graphQL/users';
-import { NotificationType, useNotificationStore } from '@/store/notificationStore';
-import { useUserStore } from '@/store/userStore';
+import { notificationStore, NotificationType } from '@/store/notificationStore';
+import { userStore } from '@/store/userStore';
 
 import { HeaderApp } from '../header-app';
 import { MENU_ITEMS } from './constants';
@@ -17,10 +18,10 @@ import styles from './styles.module.css';
 
 const { Sider, Content } = Layout;
 
-export const LayoutApp = () => {
+export const LayoutApp = observer(() => {
   const [collapsed, setCollapsed] = useState(false);
   const [api, contextHolder] = notification.useNotification();
-  const { notification: notificationData, removeNotification } = useNotificationStore();
+  const { notification: notificationData } = notificationStore;
   const location = useLocation();
 
   const [fetchUserById] = useLazyQuery<any>(GET_USER_BY_ID);
@@ -34,22 +35,23 @@ export const LayoutApp = () => {
       if (!id) return;
 
       try {
-        useUserStore.setState({ loading: true, error: null });
+        userStore.setError(null);
+        userStore.setLoading(true);
 
         const { data } = await fetchUserById({ variables: { id } });
 
         if (data?.authUser) {
-          useUserStore.setState({ user: data.authUser, loading: false });
+          userStore.setUser(data.authUser);
+          userStore.setLoading(false);
         } else {
-          useUserStore.setState({ user: null, loading: false });
+          userStore.setUser(null);
+          userStore.setLoading(false);
         }
       } catch (e) {
         console.error(e);
-        useUserStore.setState({
-          user: null,
-          error: Error('Ошибка загрузки пользователя'),
-          loading: false,
-        });
+        userStore.setUser(null);
+        userStore.setError(Error('Ошибка загрузки пользователя'));
+        userStore.setLoading(false);
       }
     };
 
@@ -61,7 +63,7 @@ export const LayoutApp = () => {
   useEffect(() => {
     if (notificationData?.type) {
       viewNotification(notificationData);
-      removeNotification();
+      notificationStore.removeNotification();
     }
   }, [notificationData]);
 
@@ -121,4 +123,4 @@ export const LayoutApp = () => {
       </Layout>
     </Layout>
   );
-};
+});

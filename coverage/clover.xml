@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1747851182168" clover="3.2.0">
-  <project timestamp="1747851182168" name="All files">
-    <metrics statements="2437" coveredstatements="32" conditionals="57" coveredconditionals="24" methods="49" coveredmethods="16" elements="2543" coveredelements="72" complexity="0" loc="2437" ncloc="2437" packages="30" files="50" classes="50"/>
+<coverage generated="1749804069867" clover="3.2.0">
+  <project timestamp="1749804069867" name="All files">
+    <metrics statements="2457" coveredstatements="32" conditionals="57" coveredconditionals="24" methods="49" coveredmethods="16" elements="2563" coveredelements="72" complexity="0" loc="2457" ncloc="2457" packages="30" files="50" classes="50"/>
     <package name="src">
       <metrics statements="14" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
-      <file name="main.tsx" path="F:\Pet-Projects-Programming\finance-app\finance-app-zuztand\src\main.tsx">
+      <file name="main.tsx" path="F:\Pet-Projects-Programming\finance-app\finance-app-mobx\finance-app-mobx\src\main.tsx">
         <metrics statements="14" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="2" count="0" type="stmt"/>
@@ -24,7 +24,7 @@
     </package>
     <package name="src.components.base-layout">
       <metrics statements="133" coveredstatements="0" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="1"/>
-      <file name="constants.tsx" path="F:\Pet-Projects-Programming\finance-app\finance-app-zuztand\src\components\base-layout\constants.tsx">
+      <file name="constants.tsx" path="F:\Pet-Projects-Programming\finance-app\finance-app-mobx\finance-app-mobx\src\components\base-layout\constants.tsx">
         <metrics statements="33" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="2" count="0" type="stmt"/>
@@ -60,7 +60,7 @@
         <line num="47" count="0" type="stmt"/>
         <line num="48" count="0" type="stmt"/>
       </file>
-      <file name="index.tsx" path="F:\Pet-Projects-Programming\finance-app\finance-app-zuztand\src\components\base-layout\index.tsx">
+      <file name="index.tsx" path="F:\Pet-Projects-Programming\finance-app\finance-app-mobx\finance-app-mobx\src\components\base-layout\index.tsx">
         <metrics statements="100" coveredstatements="0" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="3" count="0" type="stmt"/>
         <line num="4" count="0" type="stmt"/>
@@ -166,7 +166,7 @@
     </package>
     <package name="src.components.charts.explorer">
       <metrics statements="81" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
-      <file name="index.tsx" path="F:\Pet-Projects-Programming\finance-app\finance-app-zuztand\src\components\charts\explorer\index.tsx">
+      <file name="index.tsx" path="F:\Pet-Projects-Programming\finance-app\finance-app-mobx\finance-app-mobx\src\components\charts\explorer\index.tsx">
         <metrics statements="81" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="2" count="0" type="stmt"/>
@@ -253,7 +253,7 @@
     </package>
     <package name="src.components.charts.pie">
       <metrics statements="125" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
-      <file name="index.tsx" path="F:\Pet-Projects-Programming\finance-app\finance-app-zuztand\src\components\charts\pie\index.tsx">
+      <file name="index.tsx" path="F:\Pet-Projects-Programming\finance-app\finance-app-mobx\finance-app-mobx\src\components\charts\pie\index.tsx">
         <metrics statements="125" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="2" count="0" type="stmt"/>
@@ -384,7 +384,7 @@
     </package>
     <package name="src.components.common-components.base-card-layout">
       <metrics statements="4" coveredstatements="0" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
-      <file name="index.tsx" path="F:\Pet-Projects-Programming\finance-app\finance-app-zuztand\src\components\common-components\base-card-layout\index.tsx">
+      <file name="index.tsx" path="F:\Pet-Projects-Programming\finance-app\finance-app-mobx\finance-app-mobx\src\components\common-components\base-card-layout\index.tsx">
         <metrics statements="4" coveredstatements="0" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="3" count="0" type="stmt"/>
         <line num="9" count="0" type="stmt"/>
@@ -394,7 +394,7 @@
     </package>
     <package name="src.components.common-components.create-category-modal">
       <metrics statements="175" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
-      <file name="index.tsx" path="F:\Pet-Projects-Programming\finance-app\finance-app-zuztand\src\components\common-components\create-category-modal\index.tsx">
+      <file name="index.tsx" path="F:\Pet-Projects-Programming\finance-app\finance-app-mobx\finance-app-mobx\src\components\common-components\create-category-modal\index.tsx">
         <metrics statements="175" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="2" count="0" type="stmt"/>
@@ -575,7 +575,7 @@
     </package>
     <package name="src.components.common-components.goals-table">
       <metrics statements="94" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
-      <file name="index.tsx" path="F:\Pet-Projects-Programming\finance-app\finance-app-zuztand\src\components\common-components\goals-table\index.tsx">
+      <file name="index.tsx" path="F:\Pet-Projects-Programming\finance-app\finance-app-mobx\finance-app-mobx\src\components\common-components\goals-table\index.tsx">
         <metrics statements="94" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="2" count="0" type="stmt"/>
@@ -675,7 +675,7 @@
     </package>
     <package name="src.components.common-components.granularity-picker">
       <metrics statements="57" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
-      <file name="index.tsx" path="F:\Pet-Projects-Programming\finance-app\finance-app-zuztand\src\components\common-components\granularity-picker\index.tsx">
+      <file name="index.tsx" path="F:\Pet-Projects-Programming\finance-app\finance-app-mobx\finance-app-mobx\src\components\common-components\granularity-picker\index.tsx">
         <metrics statements="57" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="2" count="0" type="stmt"/>
@@ -737,21 +737,21 @@
       </file>
     </package>
     <package name="src.components.common-components.recent-transitions">
-      <metrics statements="40" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
-      <file name="index.tsx" path="F:\Pet-Projects-Programming\finance-app\finance-app-zuztand\src\components\common-components\recent-transitions\index.tsx">
-        <metrics statements="40" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <metrics statements="43" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <file name="index.tsx" path="F:\Pet-Projects-Programming\finance-app\finance-app-mobx\finance-app-mobx\src\components\common-components\recent-transitions\index.tsx">
+        <metrics statements="43" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
-        <line num="3" count="0" type="stmt"/>
+        <line num="2" count="0" type="stmt"/>
         <line num="4" count="0" type="stmt"/>
         <line num="5" count="0" type="stmt"/>
-        <line num="12" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
         <line num="13" count="0" type="stmt"/>
         <line num="14" count="0" type="stmt"/>
         <line num="15" count="0" type="stmt"/>
         <line num="16" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
         <line num="18" count="0" type="stmt"/>
         <line num="20" count="0" type="stmt"/>
-        <line num="21" count="0" type="stmt"/>
         <line num="22" count="0" type="stmt"/>
         <line num="23" count="0" type="stmt"/>
         <line num="24" count="0" type="stmt"/>
@@ -772,19 +772,22 @@
         <line num="39" count="0" type="stmt"/>
         <line num="40" count="0" type="stmt"/>
         <line num="41" count="0" type="stmt"/>
+        <line num="42" count="0" type="stmt"/>
         <line num="43" count="0" type="stmt"/>
-        <line num="44" count="0" type="stmt"/>
         <line num="45" count="0" type="stmt"/>
         <line num="46" count="0" type="stmt"/>
+        <line num="47" count="0" type="stmt"/>
         <line num="48" count="0" type="stmt"/>
         <line num="49" count="0" type="stmt"/>
-        <line num="50" count="0" type="stmt"/>
         <line num="52" count="0" type="stmt"/>
+        <line num="53" count="0" type="stmt"/>
+        <line num="54" count="0" type="stmt"/>
+        <line num="56" count="0" type="stmt"/>
       </file>
     </package>
     <package name="src.components.common-components.transition-table">
       <metrics statements="207" coveredstatements="0" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
-      <file name="index.tsx" path="F:\Pet-Projects-Programming\finance-app\finance-app-zuztand\src\components\common-components\transition-table\index.tsx">
+      <file name="index.tsx" path="F:\Pet-Projects-Programming\finance-app\finance-app-mobx\finance-app-mobx\src\components\common-components\transition-table\index.tsx">
         <metrics statements="207" coveredstatements="0" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="2" count="0" type="stmt"/>
         <line num="3" count="0" type="stmt"/>
@@ -997,7 +1000,7 @@
     </package>
     <package name="src.components.forms.auth-form">
       <metrics statements="74" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
-      <file name="index.tsx" path="F:\Pet-Projects-Programming\finance-app\finance-app-zuztand\src\components\forms\auth-form\index.tsx">
+      <file name="index.tsx" path="F:\Pet-Projects-Programming\finance-app\finance-app-mobx\finance-app-mobx\src\components\forms\auth-form\index.tsx">
         <metrics statements="74" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="2" count="0" type="stmt"/>
@@ -1076,91 +1079,91 @@
       </file>
     </package>
     <package name="src.components.forms.edit-profile-form">
-      <metrics statements="160" coveredstatements="0" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
-      <file name="index.tsx" path="F:\Pet-Projects-Programming\finance-app\finance-app-zuztand\src\components\forms\edit-profile-form\index.tsx">
-        <metrics statements="160" coveredstatements="0" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+      <metrics statements="161" coveredstatements="0" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+      <file name="index.tsx" path="F:\Pet-Projects-Programming\finance-app\finance-app-mobx\finance-app-mobx\src\components\forms\edit-profile-form\index.tsx">
+        <metrics statements="161" coveredstatements="0" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="2" count="0" type="stmt"/>
         <line num="3" count="0" type="stmt"/>
         <line num="4" count="0" type="stmt"/>
         <line num="5" count="0" type="stmt"/>
-        <line num="7" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
         <line num="8" count="0" type="stmt"/>
         <line num="9" count="0" type="stmt"/>
         <line num="10" count="0" type="stmt"/>
         <line num="11" count="0" type="stmt"/>
         <line num="12" count="0" type="stmt"/>
-        <line num="14" count="0" type="stmt"/>
-        <line num="20" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
         <line num="21" count="0" type="stmt"/>
         <line num="22" count="0" type="stmt"/>
         <line num="23" count="0" type="stmt"/>
-        <line num="25" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
         <line num="26" count="0" type="stmt"/>
         <line num="27" count="0" type="stmt"/>
-        <line num="29" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
         <line num="30" count="0" type="stmt"/>
-        <line num="32" count="0" type="stmt"/>
+        <line num="31" count="0" type="stmt"/>
         <line num="33" count="0" type="stmt"/>
-        <line num="35" count="0" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
         <line num="36" count="0" type="stmt"/>
         <line num="37" count="0" type="stmt"/>
         <line num="38" count="0" type="stmt"/>
         <line num="39" count="0" type="stmt"/>
         <line num="40" count="0" type="stmt"/>
-        <line num="42" count="0" type="stmt"/>
+        <line num="41" count="0" type="stmt"/>
         <line num="43" count="0" type="stmt"/>
-        <line num="45" count="0" type="stmt"/>
+        <line num="44" count="0" type="stmt"/>
         <line num="46" count="0" type="stmt"/>
-        <line num="48" count="0" type="stmt"/>
+        <line num="47" count="0" type="stmt"/>
         <line num="49" count="0" type="stmt"/>
         <line num="50" count="0" type="stmt"/>
         <line num="51" count="0" type="stmt"/>
         <line num="52" count="0" type="stmt"/>
         <line num="53" count="0" type="stmt"/>
         <line num="54" count="0" type="stmt"/>
-        <line num="56" count="0" type="stmt"/>
+        <line num="55" count="0" type="stmt"/>
         <line num="57" count="0" type="stmt"/>
         <line num="58" count="0" type="stmt"/>
         <line num="59" count="0" type="stmt"/>
         <line num="60" count="0" type="stmt"/>
         <line num="61" count="0" type="stmt"/>
-        <line num="63" count="0" type="stmt"/>
+        <line num="62" count="0" type="stmt"/>
         <line num="64" count="0" type="stmt"/>
         <line num="65" count="0" type="stmt"/>
-        <line num="67" count="0" type="stmt"/>
+        <line num="66" count="0" type="stmt"/>
         <line num="68" count="0" type="stmt"/>
         <line num="69" count="0" type="stmt"/>
-        <line num="71" count="0" type="stmt"/>
+        <line num="70" count="0" type="stmt"/>
         <line num="72" count="0" type="stmt"/>
         <line num="73" count="0" type="stmt"/>
         <line num="74" count="0" type="stmt"/>
         <line num="75" count="0" type="stmt"/>
         <line num="76" count="0" type="stmt"/>
         <line num="77" count="0" type="stmt"/>
-        <line num="79" count="0" type="stmt"/>
+        <line num="78" count="0" type="stmt"/>
         <line num="80" count="0" type="stmt"/>
         <line num="81" count="0" type="stmt"/>
         <line num="82" count="0" type="stmt"/>
         <line num="83" count="0" type="stmt"/>
         <line num="84" count="0" type="stmt"/>
         <line num="85" count="0" type="stmt"/>
-        <line num="87" count="0" type="stmt"/>
+        <line num="86" count="0" type="stmt"/>
         <line num="88" count="0" type="stmt"/>
-        <line num="90" count="0" type="stmt"/>
+        <line num="89" count="0" type="stmt"/>
         <line num="91" count="0" type="stmt"/>
         <line num="92" count="0" type="stmt"/>
-        <line num="94" count="0" type="stmt"/>
-        <line num="96" count="0" type="stmt"/>
+        <line num="93" count="0" type="stmt"/>
+        <line num="95" count="0" type="stmt"/>
         <line num="97" count="0" type="stmt"/>
         <line num="98" count="0" type="stmt"/>
-        <line num="100" count="0" type="stmt"/>
+        <line num="99" count="0" type="stmt"/>
         <line num="101" count="0" type="stmt"/>
-        <line num="103" count="0" type="stmt"/>
+        <line num="102" count="0" type="stmt"/>
         <line num="104" count="0" type="stmt"/>
         <line num="105" count="0" type="stmt"/>
         <line num="106" count="0" type="stmt"/>
-        <line num="108" count="0" type="stmt"/>
-        <line num="110" count="0" type="stmt"/>
+        <line num="107" count="0" type="stmt"/>
+        <line num="109" count="0" type="stmt"/>
         <line num="111" count="0" type="stmt"/>
         <line num="112" count="0" type="stmt"/>
         <line num="113" count="0" type="stmt"/>
@@ -1168,7 +1171,7 @@
         <line num="115" count="0" type="stmt"/>
         <line num="116" count="0" type="stmt"/>
         <line num="117" count="0" type="stmt"/>
-        <line num="119" count="0" type="stmt"/>
+        <line num="118" count="0" type="stmt"/>
         <line num="120" count="0" type="stmt"/>
         <line num="121" count="0" type="stmt"/>
         <line num="122" count="0" type="stmt"/>
@@ -1179,11 +1182,11 @@
         <line num="127" count="0" type="stmt"/>
         <line num="128" count="0" type="stmt"/>
         <line num="129" count="0" type="stmt"/>
-        <line num="132" count="0" type="stmt"/>
+        <line num="130" count="0" type="stmt"/>
         <line num="133" count="0" type="stmt"/>
         <line num="134" count="0" type="stmt"/>
         <line num="135" count="0" type="stmt"/>
-        <line num="137" count="0" type="stmt"/>
+        <line num="136" count="0" type="stmt"/>
         <line num="138" count="0" type="stmt"/>
         <line num="139" count="0" type="stmt"/>
         <line num="140" count="0" type="stmt"/>
@@ -1191,20 +1194,20 @@
         <line num="142" count="0" type="stmt"/>
         <line num="143" count="0" type="stmt"/>
         <line num="144" count="0" type="stmt"/>
-        <line num="146" count="0" type="stmt"/>
+        <line num="145" count="0" type="stmt"/>
         <line num="147" count="0" type="stmt"/>
-        <line num="149" count="0" type="stmt"/>
+        <line num="148" count="0" type="stmt"/>
         <line num="150" count="0" type="stmt"/>
         <line num="151" count="0" type="stmt"/>
         <line num="152" count="0" type="stmt"/>
-        <line num="154" count="0" type="stmt"/>
+        <line num="153" count="0" type="stmt"/>
         <line num="155" count="0" type="stmt"/>
         <line num="156" count="0" type="stmt"/>
         <line num="157" count="0" type="stmt"/>
         <line num="158" count="0" type="stmt"/>
-        <line num="160" count="0" type="stmt"/>
+        <line num="159" count="0" type="stmt"/>
         <line num="161" count="0" type="stmt"/>
-        <line num="163" count="0" type="stmt"/>
+        <line num="162" count="0" type="stmt"/>
         <line num="164" count="0" type="stmt"/>
         <line num="165" count="0" type="stmt"/>
         <line num="166" count="0" type="stmt"/>
@@ -1212,9 +1215,9 @@
         <line num="168" count="0" type="stmt"/>
         <line num="169" count="0" type="stmt"/>
         <line num="170" count="0" type="stmt"/>
-        <line num="172" count="0" type="stmt"/>
+        <line num="171" count="0" type="stmt"/>
         <line num="173" count="0" type="stmt"/>
-        <line num="175" count="0" type="stmt"/>
+        <line num="174" count="0" type="stmt"/>
         <line num="176" count="0" type="stmt"/>
         <line num="177" count="0" type="stmt"/>
         <line num="178" count="0" type="stmt"/>
@@ -1230,20 +1233,21 @@
         <line num="188" count="0" type="stmt"/>
         <line num="189" count="0" type="stmt"/>
         <line num="190" count="0" type="stmt"/>
-        <line num="192" count="0" type="stmt"/>
+        <line num="191" count="0" type="stmt"/>
         <line num="193" count="0" type="stmt"/>
-        <line num="195" count="0" type="stmt"/>
+        <line num="194" count="0" type="stmt"/>
         <line num="196" count="0" type="stmt"/>
-        <line num="198" count="0" type="stmt"/>
+        <line num="197" count="0" type="stmt"/>
         <line num="199" count="0" type="stmt"/>
         <line num="200" count="0" type="stmt"/>
         <line num="201" count="0" type="stmt"/>
-        <line num="203" count="0" type="stmt"/>
+        <line num="202" count="0" type="stmt"/>
+        <line num="204" count="0" type="stmt"/>
       </file>
     </package>
     <package name="src.components.forms.goal-form">
       <metrics statements="104" coveredstatements="0" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
-      <file name="index.tsx" path="F:\Pet-Projects-Programming\finance-app\finance-app-zuztand\src\components\forms\goal-form\index.tsx">
+      <file name="index.tsx" path="F:\Pet-Projects-Programming\finance-app\finance-app-mobx\finance-app-mobx\src\components\forms\goal-form\index.tsx">
         <metrics statements="104" coveredstatements="0" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="2" count="0" type="stmt"/>
         <line num="3" count="0" type="stmt"/>
@@ -1353,7 +1357,7 @@
     </package>
     <package name="src.components.forms.register-form">
       <metrics statements="95" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
-      <file name="index.tsx" path="F:\Pet-Projects-Programming\finance-app\finance-app-zuztand\src\components\forms\register-form\index.tsx">
+      <file name="index.tsx" path="F:\Pet-Projects-Programming\finance-app\finance-app-mobx\finance-app-mobx\src\components\forms\register-form\index.tsx">
         <metrics statements="95" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="2" count="0" type="stmt"/>
@@ -1454,7 +1458,7 @@
     </package>
     <package name="src.components.forms.transition-form">
       <metrics statements="229" coveredstatements="0" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
-      <file name="index.tsx" path="F:\Pet-Projects-Programming\finance-app\finance-app-zuztand\src\components\forms\transition-form\index.tsx">
+      <file name="index.tsx" path="F:\Pet-Projects-Programming\finance-app\finance-app-mobx\finance-app-mobx\src\components\forms\transition-form\index.tsx">
         <metrics statements="229" coveredstatements="0" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="2" count="0" type="stmt"/>
         <line num="3" count="0" type="stmt"/>
@@ -1686,13 +1690,13 @@
         <line num="287" count="0" type="stmt"/>
         <line num="289" count="0" type="stmt"/>
       </file>
-      <file name="types.ts" path="F:\Pet-Projects-Programming\finance-app\finance-app-zuztand\src\components\forms\transition-form\types.ts">
+      <file name="types.ts" path="F:\Pet-Projects-Programming\finance-app\finance-app-mobx\finance-app-mobx\src\components\forms\transition-form\types.ts">
         <metrics statements="0" coveredstatements="0" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
       </file>
     </package>
     <package name="src.components.header-app">
       <metrics statements="88" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
-      <file name="index.tsx" path="F:\Pet-Projects-Programming\finance-app\finance-app-zuztand\src\components\header-app\index.tsx">
+      <file name="index.tsx" path="F:\Pet-Projects-Programming\finance-app\finance-app-mobx\finance-app-mobx\src\components\header-app\index.tsx">
         <metrics statements="88" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="2" count="0" type="stmt"/>
@@ -1786,7 +1790,7 @@
     </package>
     <package name="src.components.protected-route">
       <metrics statements="13" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
-      <file name="index.tsx" path="F:\Pet-Projects-Programming\finance-app\finance-app-zuztand\src\components\protected-route\index.tsx">
+      <file name="index.tsx" path="F:\Pet-Projects-Programming\finance-app\finance-app-mobx\finance-app-mobx\src\components\protected-route\index.tsx">
         <metrics statements="13" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="2" count="0" type="stmt"/>
@@ -1805,7 +1809,7 @@
     </package>
     <package name="src.constants">
       <metrics statements="75" coveredstatements="0" conditionals="3" coveredconditionals="0" methods="3" coveredmethods="0"/>
-      <file name="granularity.ts" path="F:\Pet-Projects-Programming\finance-app\finance-app-zuztand\src\constants\granularity.ts">
+      <file name="granularity.ts" path="F:\Pet-Projects-Programming\finance-app\finance-app-mobx\finance-app-mobx\src\constants\granularity.ts">
         <metrics statements="6" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="2" count="0" type="stmt"/>
@@ -1814,7 +1818,7 @@
         <line num="5" count="0" type="stmt"/>
         <line num="6" count="0" type="stmt"/>
       </file>
-      <file name="route-path.ts" path="F:\Pet-Projects-Programming\finance-app\finance-app-zuztand\src\constants\route-path.ts">
+      <file name="route-path.ts" path="F:\Pet-Projects-Programming\finance-app\finance-app-mobx\finance-app-mobx\src\constants\route-path.ts">
         <metrics statements="9" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="2" count="0" type="stmt"/>
@@ -1826,7 +1830,7 @@
         <line num="8" count="0" type="stmt"/>
         <line num="9" count="0" type="stmt"/>
       </file>
-      <file name="routes.tsx" path="F:\Pet-Projects-Programming\finance-app\finance-app-zuztand\src\constants\routes.tsx">
+      <file name="routes.tsx" path="F:\Pet-Projects-Programming\finance-app\finance-app-mobx\finance-app-mobx\src\constants\routes.tsx">
         <metrics statements="60" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="3" count="0" type="stmt"/>
@@ -1892,7 +1896,7 @@
     </package>
     <package name="src.lib.apollo">
       <metrics statements="14" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
-      <file name="index.ts" path="F:\Pet-Projects-Programming\finance-app\finance-app-zuztand\src\lib\apollo\index.ts">
+      <file name="index.ts" path="F:\Pet-Projects-Programming\finance-app\finance-app-mobx\finance-app-mobx\src\lib\apollo\index.ts">
         <metrics statements="14" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="3" count="0" type="stmt"/>
@@ -1912,12 +1916,12 @@
     </package>
     <package name="src.lib.graphQL">
       <metrics statements="23" coveredstatements="0" conditionals="5" coveredconditionals="0" methods="5" coveredmethods="0"/>
-      <file name="assets.ts" path="F:\Pet-Projects-Programming\finance-app\finance-app-zuztand\src\lib\graphQL\assets.ts">
+      <file name="assets.ts" path="F:\Pet-Projects-Programming\finance-app\finance-app-mobx\finance-app-mobx\src\lib\graphQL\assets.ts">
         <metrics statements="2" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="3" count="0" type="stmt"/>
       </file>
-      <file name="category.ts" path="F:\Pet-Projects-Programming\finance-app\finance-app-zuztand\src\lib\graphQL\category.ts">
+      <file name="category.ts" path="F:\Pet-Projects-Programming\finance-app\finance-app-mobx\finance-app-mobx\src\lib\graphQL\category.ts">
         <metrics statements="5" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="3" count="0" type="stmt"/>
@@ -1925,13 +1929,13 @@
         <line num="19" count="0" type="stmt"/>
         <line num="30" count="0" type="stmt"/>
       </file>
-      <file name="goal.ts" path="F:\Pet-Projects-Programming\finance-app\finance-app-zuztand\src\lib\graphQL\goal.ts">
+      <file name="goal.ts" path="F:\Pet-Projects-Programming\finance-app\finance-app-mobx\finance-app-mobx\src\lib\graphQL\goal.ts">
         <metrics statements="3" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="3" count="0" type="stmt"/>
         <line num="11" count="0" type="stmt"/>
       </file>
-      <file name="transition.ts" path="F:\Pet-Projects-Programming\finance-app\finance-app-zuztand\src\lib\graphQL\transition.ts">
+      <file name="transition.ts" path="F:\Pet-Projects-Programming\finance-app\finance-app-mobx\finance-app-mobx\src\lib\graphQL\transition.ts">
         <metrics statements="5" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="3" count="0" type="stmt"/>
@@ -1939,7 +1943,7 @@
         <line num="35" count="0" type="stmt"/>
         <line num="53" count="0" type="stmt"/>
       </file>
-      <file name="users.ts" path="F:\Pet-Projects-Programming\finance-app\finance-app-zuztand\src\lib\graphQL\users.ts">
+      <file name="users.ts" path="F:\Pet-Projects-Programming\finance-app\finance-app-mobx\finance-app-mobx\src\lib\graphQL\users.ts">
         <metrics statements="8" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="3" count="0" type="stmt"/>
@@ -1953,7 +1957,7 @@
     </package>
     <package name="src.pages.auth">
       <metrics statements="54" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
-      <file name="index.tsx" path="F:\Pet-Projects-Programming\finance-app\finance-app-zuztand\src\pages\auth\index.tsx">
+      <file name="index.tsx" path="F:\Pet-Projects-Programming\finance-app\finance-app-mobx\finance-app-mobx\src\pages\auth\index.tsx">
         <metrics statements="54" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="3" count="0" type="stmt"/>
@@ -2012,33 +2016,32 @@
       </file>
     </package>
     <package name="src.pages.edit">
-      <metrics statements="41" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
-      <file name="index.tsx" path="F:\Pet-Projects-Programming\finance-app\finance-app-zuztand\src\pages\edit\index.tsx">
-        <metrics statements="41" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <metrics statements="42" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <file name="index.tsx" path="F:\Pet-Projects-Programming\finance-app\finance-app-mobx\finance-app-mobx\src\pages\edit\index.tsx">
+        <metrics statements="42" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="2" count="0" type="stmt"/>
-        <line num="4" count="0" type="stmt"/>
+        <line num="3" count="0" type="stmt"/>
         <line num="5" count="0" type="stmt"/>
         <line num="6" count="0" type="stmt"/>
-        <line num="8" count="0" type="stmt"/>
-        <line num="10" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
         <line num="11" count="0" type="stmt"/>
         <line num="12" count="0" type="stmt"/>
         <line num="13" count="0" type="stmt"/>
         <line num="15" count="0" type="stmt"/>
-        <line num="16" count="0" type="stmt"/>
         <line num="17" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
         <line num="19" count="0" type="stmt"/>
-        <line num="20" count="0" type="stmt"/>
         <line num="21" count="0" type="stmt"/>
         <line num="22" count="0" type="stmt"/>
         <line num="23" count="0" type="stmt"/>
         <line num="24" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
         <line num="26" count="0" type="stmt"/>
-        <line num="27" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
         <line num="29" count="0" type="stmt"/>
         <line num="31" count="0" type="stmt"/>
-        <line num="32" count="0" type="stmt"/>
         <line num="33" count="0" type="stmt"/>
         <line num="34" count="0" type="stmt"/>
         <line num="35" count="0" type="stmt"/>
@@ -2049,18 +2052,20 @@
         <line num="40" count="0" type="stmt"/>
         <line num="41" count="0" type="stmt"/>
         <line num="42" count="0" type="stmt"/>
+        <line num="43" count="0" type="stmt"/>
         <line num="44" count="0" type="stmt"/>
-        <line num="45" count="0" type="stmt"/>
         <line num="46" count="0" type="stmt"/>
         <line num="47" count="0" type="stmt"/>
         <line num="48" count="0" type="stmt"/>
         <line num="49" count="0" type="stmt"/>
+        <line num="50" count="0" type="stmt"/>
         <line num="51" count="0" type="stmt"/>
+        <line num="53" count="0" type="stmt"/>
       </file>
     </package>
     <package name="src.pages.expense">
       <metrics statements="75" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
-      <file name="index.tsx" path="F:\Pet-Projects-Programming\finance-app\finance-app-zuztand\src\pages\expense\index.tsx">
+      <file name="index.tsx" path="F:\Pet-Projects-Programming\finance-app\finance-app-mobx\finance-app-mobx\src\pages\expense\index.tsx">
         <metrics statements="75" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="2" count="0" type="stmt"/>
@@ -2141,7 +2146,7 @@
     </package>
     <package name="src.pages.goals">
       <metrics statements="54" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="0"/>
-      <file name="constants.ts" path="F:\Pet-Projects-Programming\finance-app\finance-app-zuztand\src\pages\goals\constants.ts">
+      <file name="constants.ts" path="F:\Pet-Projects-Programming\finance-app\finance-app-mobx\finance-app-mobx\src\pages\goals\constants.ts">
         <metrics statements="7" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="2" count="0" type="stmt"/>
@@ -2151,7 +2156,7 @@
         <line num="6" count="0" type="stmt"/>
         <line num="7" count="0" type="stmt"/>
       </file>
-      <file name="index.tsx" path="F:\Pet-Projects-Programming\finance-app\finance-app-zuztand\src\pages\goals\index.tsx">
+      <file name="index.tsx" path="F:\Pet-Projects-Programming\finance-app\finance-app-mobx\finance-app-mobx\src\pages\goals\index.tsx">
         <metrics statements="47" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="2" count="0" type="stmt"/>
@@ -2203,13 +2208,13 @@
       </file>
     </package>
     <package name="src.pages.home">
-      <metrics statements="105" coveredstatements="0" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
-      <file name="index.tsx" path="F:\Pet-Projects-Programming\finance-app\finance-app-zuztand\src\pages\home\index.tsx">
-        <metrics statements="105" coveredstatements="0" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+      <metrics statements="111" coveredstatements="0" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+      <file name="index.tsx" path="F:\Pet-Projects-Programming\finance-app\finance-app-mobx\finance-app-mobx\src\pages\home\index.tsx">
+        <metrics statements="111" coveredstatements="0" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="2" count="0" type="stmt"/>
         <line num="3" count="0" type="stmt"/>
         <line num="4" count="0" type="stmt"/>
-        <line num="6" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
         <line num="7" count="0" type="stmt"/>
         <line num="8" count="0" type="stmt"/>
         <line num="9" count="0" type="stmt"/>
@@ -2220,35 +2225,35 @@
         <line num="14" count="0" type="stmt"/>
         <line num="15" count="0" type="stmt"/>
         <line num="16" count="0" type="stmt"/>
-        <line num="18" count="0" type="stmt"/>
-        <line num="20" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
         <line num="21" count="0" type="stmt"/>
         <line num="22" count="0" type="stmt"/>
         <line num="23" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
         <line num="25" count="0" type="stmt"/>
         <line num="27" count="0" type="stmt"/>
-        <line num="28" count="0" type="stmt"/>
         <line num="29" count="0" type="stmt"/>
         <line num="30" count="0" type="stmt"/>
         <line num="31" count="0" type="stmt"/>
         <line num="32" count="0" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
         <line num="34" count="0" type="stmt"/>
-        <line num="35" count="0" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
         <line num="37" count="0" type="stmt"/>
-        <line num="38" count="0" type="stmt"/>
         <line num="39" count="0" type="stmt"/>
+        <line num="40" count="0" type="stmt"/>
         <line num="41" count="0" type="stmt"/>
-        <line num="42" count="0" type="stmt"/>
+        <line num="43" count="0" type="stmt"/>
         <line num="44" count="0" type="stmt"/>
-        <line num="45" count="0" type="stmt"/>
         <line num="46" count="0" type="stmt"/>
         <line num="47" count="0" type="stmt"/>
         <line num="48" count="0" type="stmt"/>
+        <line num="49" count="0" type="stmt"/>
         <line num="50" count="0" type="stmt"/>
-        <line num="51" count="0" type="stmt"/>
+        <line num="52" count="0" type="stmt"/>
         <line num="53" count="0" type="stmt"/>
         <line num="55" count="0" type="stmt"/>
-        <line num="56" count="0" type="stmt"/>
         <line num="57" count="0" type="stmt"/>
         <line num="58" count="0" type="stmt"/>
         <line num="59" count="0" type="stmt"/>
@@ -2259,8 +2264,8 @@
         <line num="64" count="0" type="stmt"/>
         <line num="65" count="0" type="stmt"/>
         <line num="66" count="0" type="stmt"/>
+        <line num="67" count="0" type="stmt"/>
         <line num="68" count="0" type="stmt"/>
-        <line num="69" count="0" type="stmt"/>
         <line num="70" count="0" type="stmt"/>
         <line num="71" count="0" type="stmt"/>
         <line num="72" count="0" type="stmt"/>
@@ -2270,8 +2275,8 @@
         <line num="76" count="0" type="stmt"/>
         <line num="77" count="0" type="stmt"/>
         <line num="78" count="0" type="stmt"/>
+        <line num="79" count="0" type="stmt"/>
         <line num="80" count="0" type="stmt"/>
-        <line num="81" count="0" type="stmt"/>
         <line num="82" count="0" type="stmt"/>
         <line num="83" count="0" type="stmt"/>
         <line num="84" count="0" type="stmt"/>
@@ -2282,15 +2287,15 @@
         <line num="89" count="0" type="stmt"/>
         <line num="90" count="0" type="stmt"/>
         <line num="91" count="0" type="stmt"/>
+        <line num="92" count="0" type="stmt"/>
         <line num="93" count="0" type="stmt"/>
-        <line num="94" count="0" type="stmt"/>
         <line num="95" count="0" type="stmt"/>
+        <line num="96" count="0" type="stmt"/>
         <line num="97" count="0" type="stmt"/>
         <line num="98" count="0" type="stmt"/>
         <line num="99" count="0" type="stmt"/>
         <line num="100" count="0" type="stmt"/>
         <line num="101" count="0" type="stmt"/>
-        <line num="102" count="0" type="stmt"/>
         <line num="103" count="0" type="stmt"/>
         <line num="104" count="0" type="stmt"/>
         <line num="105" count="0" type="stmt"/>
@@ -2310,12 +2315,18 @@
         <line num="119" count="0" type="stmt"/>
         <line num="120" count="0" type="stmt"/>
         <line num="121" count="0" type="stmt"/>
+        <line num="122" count="0" type="stmt"/>
         <line num="123" count="0" type="stmt"/>
+        <line num="124" count="0" type="stmt"/>
+        <line num="125" count="0" type="stmt"/>
+        <line num="126" count="0" type="stmt"/>
+        <line num="127" count="0" type="stmt"/>
+        <line num="129" count="0" type="stmt"/>
       </file>
     </package>
     <package name="src.pages.income">
       <metrics statements="75" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
-      <file name="index.tsx" path="F:\Pet-Projects-Programming\finance-app\finance-app-zuztand\src\pages\income\index.tsx">
+      <file name="index.tsx" path="F:\Pet-Projects-Programming\finance-app\finance-app-mobx\finance-app-mobx\src\pages\income\index.tsx">
         <metrics statements="75" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="2" count="0" type="stmt"/>
@@ -2396,7 +2407,7 @@
     </package>
     <package name="src.pages.not-found">
       <metrics statements="18" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
-      <file name="index.tsx" path="F:\Pet-Projects-Programming\finance-app\finance-app-zuztand\src\pages\not-found\index.tsx">
+      <file name="index.tsx" path="F:\Pet-Projects-Programming\finance-app\finance-app-mobx\finance-app-mobx\src\pages\not-found\index.tsx">
         <metrics statements="18" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="2" count="0" type="stmt"/>
@@ -2419,9 +2430,9 @@
       </file>
     </package>
     <package name="src.store">
-      <metrics statements="167" coveredstatements="0" conditionals="4" coveredconditionals="1" methods="4" coveredmethods="1"/>
-      <file name="avatarStore.ts" path="F:\Pet-Projects-Programming\finance-app\finance-app-zuztand\src\store\avatarStore.ts">
-        <metrics statements="39" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <metrics statements="176" coveredstatements="0" conditionals="4" coveredconditionals="1" methods="4" coveredmethods="1"/>
+      <file name="avatarStore.ts" path="F:\Pet-Projects-Programming\finance-app\finance-app-mobx\finance-app-mobx\src\store\avatarStore.ts">
+        <metrics statements="40" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="3" count="0" type="stmt"/>
         <line num="4" count="0" type="stmt"/>
@@ -2441,10 +2452,9 @@
         <line num="33" count="0" type="stmt"/>
         <line num="34" count="0" type="stmt"/>
         <line num="35" count="0" type="stmt"/>
-        <line num="36" count="0" type="stmt"/>
         <line num="37" count="0" type="stmt"/>
+        <line num="38" count="0" type="stmt"/>
         <line num="39" count="0" type="stmt"/>
-        <line num="40" count="0" type="stmt"/>
         <line num="41" count="0" type="stmt"/>
         <line num="42" count="0" type="stmt"/>
         <line num="43" count="0" type="stmt"/>
@@ -2453,7 +2463,6 @@
         <line num="47" count="0" type="stmt"/>
         <line num="48" count="0" type="stmt"/>
         <line num="49" count="0" type="stmt"/>
-        <line num="50" count="0" type="stmt"/>
         <line num="51" count="0" type="stmt"/>
         <line num="52" count="0" type="stmt"/>
         <line num="53" count="0" type="stmt"/>
@@ -2461,19 +2470,30 @@
         <line num="55" count="0" type="stmt"/>
         <line num="56" count="0" type="stmt"/>
         <line num="57" count="0" type="stmt"/>
+        <line num="58" count="0" type="stmt"/>
+        <line num="59" count="0" type="stmt"/>
+        <line num="61" count="0" type="stmt"/>
       </file>
-      <file name="granularityStore.ts" path="F:\Pet-Projects-Programming\finance-app\finance-app-zuztand\src\store\granularityStore.ts">
-        <metrics statements="8" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <file name="granularityStore.ts" path="F:\Pet-Projects-Programming\finance-app\finance-app-mobx\finance-app-mobx\src\store\granularityStore.ts">
+        <metrics statements="16" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="2" count="0" type="stmt"/>
-        <line num="13" count="0" type="stmt"/>
-        <line num="14" count="0" type="stmt"/>
-        <line num="15" count="0" type="stmt"/>
-        <line num="16" count="0" type="stmt"/>
-        <line num="17" count="0" type="stmt"/>
-        <line num="18" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="37" count="0" type="stmt"/>
       </file>
-      <file name="notificationStore.ts" path="F:\Pet-Projects-Programming\finance-app\finance-app-zuztand\src\store\notificationStore.ts">
+      <file name="notificationStore.ts" path="F:\Pet-Projects-Programming\finance-app\finance-app-mobx\finance-app-mobx\src\store\notificationStore.ts">
         <metrics statements="6" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="15" count="0" type="stmt"/>
@@ -2482,7 +2502,7 @@
         <line num="18" count="0" type="stmt"/>
         <line num="19" count="0" type="stmt"/>
       </file>
-      <file name="userStore.ts" path="F:\Pet-Projects-Programming\finance-app\finance-app-zuztand\src\store\userStore.ts">
+      <file name="userStore.ts" path="F:\Pet-Projects-Programming\finance-app\finance-app-mobx\finance-app-mobx\src\store\userStore.ts">
         <metrics statements="114" coveredstatements="0" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="2" count="0" type="stmt"/>
         <line num="25" count="0" type="stmt"/>
@@ -2602,13 +2622,13 @@
     </package>
     <package name="src.types">
       <metrics statements="8" coveredstatements="3" conditionals="5" coveredconditionals="4" methods="4" coveredmethods="3"/>
-      <file name="category.ts" path="F:\Pet-Projects-Programming\finance-app\finance-app-zuztand\src\types\category.ts">
+      <file name="category.ts" path="F:\Pet-Projects-Programming\finance-app\finance-app-mobx\finance-app-mobx\src\types\category.ts">
         <metrics statements="0" coveredstatements="0" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
       </file>
-      <file name="goal.ts" path="F:\Pet-Projects-Programming\finance-app\finance-app-zuztand\src\types\goal.ts">
+      <file name="goal.ts" path="F:\Pet-Projects-Programming\finance-app\finance-app-mobx\finance-app-mobx\src\types\goal.ts">
         <metrics statements="0" coveredstatements="0" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
       </file>
-      <file name="granularity.ts" path="F:\Pet-Projects-Programming\finance-app\finance-app-zuztand\src\types\granularity.ts">
+      <file name="granularity.ts" path="F:\Pet-Projects-Programming\finance-app\finance-app-mobx\finance-app-mobx\src\types\granularity.ts">
         <metrics statements="5" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="2" count="0" type="stmt"/>
@@ -2616,19 +2636,19 @@
         <line num="4" count="0" type="stmt"/>
         <line num="5" count="0" type="stmt"/>
       </file>
-      <file name="transition.ts" path="F:\Pet-Projects-Programming\finance-app\finance-app-zuztand\src\types\transition.ts">
+      <file name="transition.ts" path="F:\Pet-Projects-Programming\finance-app\finance-app-mobx\finance-app-mobx\src\types\transition.ts">
         <metrics statements="3" coveredstatements="3" conditionals="1" coveredconditionals="1" methods="0" coveredmethods="0"/>
         <line num="5" count="1" type="cond" truecount="1" falsecount="0"/>
         <line num="6" count="1" type="stmt"/>
         <line num="7" count="1" type="stmt"/>
       </file>
-      <file name="user.ts" path="F:\Pet-Projects-Programming\finance-app\finance-app-zuztand\src\types\user.ts">
+      <file name="user.ts" path="F:\Pet-Projects-Programming\finance-app\finance-app-mobx\finance-app-mobx\src\types\user.ts">
         <metrics statements="0" coveredstatements="0" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
       </file>
     </package>
     <package name="src.utils">
       <metrics statements="35" coveredstatements="29" conditionals="12" coveredconditionals="11" methods="5" coveredmethods="4"/>
-      <file name="calculate-balance.ts" path="F:\Pet-Projects-Programming\finance-app\finance-app-zuztand\src\utils\calculate-balance.ts">
+      <file name="calculate-balance.ts" path="F:\Pet-Projects-Programming\finance-app\finance-app-mobx\finance-app-mobx\src\utils\calculate-balance.ts">
         <metrics statements="11" coveredstatements="11" conditionals="5" coveredconditionals="5" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="cond" truecount="1" falsecount="0"/>
@@ -2642,7 +2662,7 @@
         <line num="11" count="5" type="stmt"/>
         <line num="12" count="5" type="stmt"/>
       </file>
-      <file name="check-password.ts" path="F:\Pet-Projects-Programming\finance-app\finance-app-zuztand\src\utils\check-password.ts">
+      <file name="check-password.ts" path="F:\Pet-Projects-Programming\finance-app\finance-app-mobx\finance-app-mobx\src\utils\check-password.ts">
         <metrics statements="8" coveredstatements="8" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="2" type="cond" truecount="1" falsecount="0"/>
@@ -2653,7 +2673,7 @@
         <line num="10" count="1" type="stmt"/>
         <line num="11" count="1" type="stmt"/>
       </file>
-      <file name="formatDate.ts" path="F:\Pet-Projects-Programming\finance-app\finance-app-zuztand\src\utils\formatDate.ts">
+      <file name="formatDate.ts" path="F:\Pet-Projects-Programming\finance-app\finance-app-mobx\finance-app-mobx\src\utils\formatDate.ts">
         <metrics statements="6" coveredstatements="6" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="cond" truecount="1" falsecount="0"/>
         <line num="2" count="3" type="stmt"/>
@@ -2662,14 +2682,14 @@
         <line num="6" count="3" type="stmt"/>
         <line num="7" count="3" type="stmt"/>
       </file>
-      <file name="get-capitalize-first-letter.ts" path="F:\Pet-Projects-Programming\finance-app\finance-app-zuztand\src\utils\get-capitalize-first-letter.ts">
+      <file name="get-capitalize-first-letter.ts" path="F:\Pet-Projects-Programming\finance-app\finance-app-mobx\finance-app-mobx\src\utils\get-capitalize-first-letter.ts">
         <metrics statements="4" coveredstatements="4" conditionals="3" coveredconditionals="3" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="cond" truecount="1" falsecount="0"/>
         <line num="2" count="5" type="cond" truecount="2" falsecount="0"/>
         <line num="3" count="4" type="stmt"/>
         <line num="4" count="4" type="stmt"/>
       </file>
-      <file name="getHashPassword.ts" path="F:\Pet-Projects-Programming\finance-app\finance-app-zuztand\src\utils\getHashPassword.ts">
+      <file name="getHashPassword.ts" path="F:\Pet-Projects-Programming\finance-app\finance-app-mobx\finance-app-mobx\src\utils\getHashPassword.ts">
         <metrics statements="6" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="3" count="0" type="stmt"/>

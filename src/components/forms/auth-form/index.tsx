@@ -6,7 +6,7 @@ import { Button, Checkbox, Flex, Form, Input } from 'antd';
 
 import { ROUTE_PATHS } from '@/constants/route-path';
 import { GET_USER_BY_EMAIL } from '@/lib/graphQL/users';
-import { useNotificationStore } from '@/store/notificationStore';
+import { notificationStore } from '@/store/notificationStore';
 import { UserType } from '@/types/user';
 import { checkPassword } from '@/utils/check-password';
 
@@ -22,7 +22,6 @@ type AuthFormProps = {
 
 export const AuthForm = ({ switchToRegister }: Props) => {
   const navigate = useNavigate();
-  const { setNotification } = useNotificationStore();
   const [fetchUserByEmail, { loading }] = useLazyQuery<AuthFormProps>(GET_USER_BY_EMAIL);
 
   const onFinish: FormProps<UserType>['onFinish'] = async (values) => {
@@ -43,7 +42,7 @@ export const AuthForm = ({ switchToRegister }: Props) => {
         throw new Error('Не верный пароль');
       }
 
-      setNotification({
+      notificationStore.setNotification({
         type: 'success',
         message: 'Успешный вход',
         description: 'Вы успешно вошли в систему.',
@@ -51,7 +50,7 @@ export const AuthForm = ({ switchToRegister }: Props) => {
       sessionStorage.setItem('userId', data.authUser.id);
       navigate(ROUTE_PATHS.home);
     } catch (e) {
-      setNotification({
+      notificationStore.setNotification({
         type: 'error',
         message: 'Ошибка',
         description: String(e),

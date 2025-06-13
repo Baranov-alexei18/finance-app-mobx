@@ -1,18 +1,25 @@
 import dayjs, { Dayjs } from 'dayjs';
-import { create } from 'zustand';
+import { makeAutoObservable } from 'mobx';
 
 import { GRANULARITY } from '@/constants/granularity';
 
-type Store = {
-  type: keyof typeof GRANULARITY;
-  period: Dayjs | null;
-  setGranularityType: (data: Store['type']) => void;
-  setGranularityPeriod: (data: Store['period']) => void;
-};
+export type GranularityType = keyof typeof GRANULARITY;
 
-export const useGranularityStore = create<Store>()((set) => ({
-  type: 'month',
-  period: dayjs(),
-  setGranularityType: (data: Store['type']) => set(() => ({ type: data })),
-  setGranularityPeriod: (data: Store['period']) => set(() => ({ period: data })),
-}));
+class GranularityStore {
+  type: GranularityType = 'month';
+  period: Dayjs | null = dayjs();
+
+  constructor() {
+    makeAutoObservable(this);
+  }
+
+  setGranularityType(data: GranularityType) {
+    this.type = data || 'month';
+  }
+
+  setGranularityPeriod(data: Dayjs | null) {
+    this.period = data;
+  }
+}
+
+export const granularityStore = new GranularityStore();
