@@ -4,7 +4,7 @@ import type { FormProps } from 'antd';
 import { Button, Form, Input } from 'antd';
 
 import { CREATE_USER, REGISTER_CREATE_USER } from '@/lib/graphQL/users';
-import { useNotificationStore } from '@/store/notificationStore';
+import { notificationStore } from '@/store/notificationStore';
 import { UserType } from '@/types/user';
 import { getHashPassword } from '@/utils/getHashPassword';
 
@@ -25,8 +25,6 @@ type AuthFormResponse = {
 export const RegisterForm = ({ switchToAuth }: Props) => {
   const [createNewUser, { loading }] = useMutation<AuthFormResponse>(CREATE_USER);
   const [publishUser] = useMutation(REGISTER_CREATE_USER);
-
-  const { setNotification } = useNotificationStore();
 
   const onFinish: FormProps<UserType>['onFinish'] = async (values) => {
     if (!values.email || !values.password) {
@@ -58,7 +56,7 @@ export const RegisterForm = ({ switchToAuth }: Props) => {
         throw new Error('Не удалось сохранить учетную запись пользователя');
       }
 
-      setNotification({
+      notificationStore.setNotification({
         type: 'success',
         message: 'Регистрация',
         description: 'Новый аккаунт успешно зарегестрирован',
@@ -66,7 +64,7 @@ export const RegisterForm = ({ switchToAuth }: Props) => {
 
       switchToAuth();
     } catch (e) {
-      setNotification({
+      notificationStore.setNotification({
         type: 'error',
         message: 'Регистрация не пройдена',
         description: String(e),

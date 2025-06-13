@@ -8,8 +8,8 @@ import { CreateCategoryModal } from '@/components/common-components/create-categ
 import { TransitionEditType } from '@/components/common-components/transition-table';
 import { CREATE_CATEGORY, REGISTER_CREATE_CATEGORY } from '@/lib/graphQL/category';
 import { CREATE_TRANSITION, REGISTER_CREATE_TRANSITION } from '@/lib/graphQL/transition';
-import { useNotificationStore } from '@/store/notificationStore';
-import { useUserStore } from '@/store/userStore';
+import { notificationStore } from '@/store/notificationStore';
+import { userStore } from '@/store/userStore';
 import { TransitionEnum, TransitionType } from '@/types/transition';
 import { getCapitalizeFirstLetter } from '@/utils/get-capitalize-first-letter';
 
@@ -26,8 +26,7 @@ type Props = {
 };
 
 export const TransitionForm = ({ title, type, data, onEdit, onCancel }: Props) => {
-  const { user, getCategoriesByType, addNewCategory, addNewTransaction } = useUserStore();
-  const { setNotification } = useNotificationStore();
+  const { user } = userStore;
 
   const [createTransition, { loading }] = useMutation<TransitionFormProps>(CREATE_TRANSITION);
   const [publishTransition] = useMutation(REGISTER_CREATE_TRANSITION);
@@ -52,7 +51,7 @@ export const TransitionForm = ({ title, type, data, onEdit, onCancel }: Props) =
     }
   }, [data, form]);
 
-  const categories = getCategoriesByType(TransitionEnum[type]).map(
+  const categories = userStore.getCategoriesByType(TransitionEnum[type]).map(
     (item) => ({
       value: item.id,
       label: getCapitalizeFirstLetter(item.name),
@@ -77,9 +76,11 @@ export const TransitionForm = ({ title, type, data, onEdit, onCancel }: Props) =
       category: {
         connect: { id: values.category },
       },
-      goal: {
-        connect: { id: values.goal },
-      },
+      goal: values.goal
+        ? {
+            connect: { id: values.goal },
+          }
+        : null,
       type: type,
       date: formattedDate,
       amount: Number(values.amount),
@@ -108,9 +109,9 @@ export const TransitionForm = ({ title, type, data, onEdit, onCancel }: Props) =
         throw new Error('Не удалось сохранить запись');
       }
 
-      addNewTransaction(data.createTransition);
+      userStore.addNewTransaction(data.createTransition);
 
-      setNotification({
+      notificationStore.setNotification({
         type: 'success',
         message: 'Успешно сохранено',
         description: `Статья ${type === TransitionEnum.INCOME ? 'доходов' : 'расходов'} создана`,
@@ -118,7 +119,7 @@ export const TransitionForm = ({ title, type, data, onEdit, onCancel }: Props) =
 
       handleReset();
     } catch (e) {
-      setNotification({
+      notificationStore.setNotification({
         type: 'error',
         message: 'Ошибка',
         description: String(e),
@@ -169,14 +170,14 @@ export const TransitionForm = ({ title, type, data, onEdit, onCancel }: Props) =
           throw new Error('Не удалось сохранить новую категорию');
         }
 
-        addNewCategory({
+        userStore.addNewCategory({
           type: type,
           name: value,
           chartColor: color,
           id: categoryId.publishCategory.id,
         });
 
-        setNotification({
+        notificationStore.setNotification({
           type: 'success',
           message: 'Успешно сохранено',
           description: 'Новая категория создана',

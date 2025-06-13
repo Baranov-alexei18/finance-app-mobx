@@ -3,11 +3,12 @@ import { useState } from 'react';
 import { UserOutlined } from '@ant-design/icons';
 import { useMutation } from '@apollo/client';
 import { Avatar, Button, Form, Input, Popover, Spin, Typography } from 'antd';
+import { observer } from 'mobx-react-lite';
 
 import { EDIT_USER, REGISTER_CREATE_USER } from '@/lib/graphQL/users';
-import { AvatarType, useAvatarStore } from '@/store/avatarStore';
-import { useNotificationStore } from '@/store/notificationStore';
-import { useUserStore } from '@/store/userStore';
+import { avatarStore, AvatarType } from '@/store/avatarStore';
+import { notificationStore } from '@/store/notificationStore';
+import { userStore } from '@/store/userStore';
 import { checkPassword } from '@/utils/check-password';
 import { getHashPassword } from '@/utils/getHashPassword';
 
@@ -17,10 +18,9 @@ type EditFormProps = {
   updateAuthUser: { id: string };
 };
 
-export const EditProfileForm = () => {
-  const { user } = useUserStore();
-  const { setNotification } = useNotificationStore();
-  const { avatars, loading: loadingAvatars } = useAvatarStore();
+export const EditProfileForm = observer(() => {
+  const { user } = userStore;
+  const { avatars, loading: loadingAvatars } = avatarStore;
 
   const [form] = Form.useForm();
   const [editUser, { loading }] = useMutation<EditFormProps>(EDIT_USER);
@@ -33,7 +33,7 @@ export const EditProfileForm = () => {
     const { name, newPassword, confirmPassword } = values;
 
     if (newPassword !== confirmPassword) {
-      setNotification({
+      notificationStore.setNotification({
         type: 'error',
         message: 'Ошибка',
         description: 'Пароли не совпадают',
@@ -68,7 +68,7 @@ export const EditProfileForm = () => {
         throw new Error('Не удалось сохранить обновить данные пользователя');
       }
 
-      setNotification({
+      notificationStore.setNotification({
         type: 'success',
         message: 'Успешно сохранено',
         description: 'Профиль успешно обновлен',
@@ -76,7 +76,7 @@ export const EditProfileForm = () => {
     } catch (e) {
       console.error(e);
 
-      setNotification({
+      notificationStore.setNotification({
         type: 'error',
         message: 'Профиль не обновлен',
         description: String(e),
@@ -200,4 +200,4 @@ export const EditProfileForm = () => {
       </Form>
     </div>
   );
-};
+});

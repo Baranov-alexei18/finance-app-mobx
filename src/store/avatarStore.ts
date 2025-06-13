@@ -1,4 +1,4 @@
-import { create } from 'zustand';
+import { makeAutoObservable } from 'mobx';
 
 import client from '@/lib/apollo';
 import { GET_ASSETS_BY_IDS } from '@/lib/graphQL/assets';
@@ -22,19 +22,25 @@ export type AvatarType = {
   fileName: string;
 };
 
-type Props = {
+interface Props {
   avatars: AvatarType[];
   loading: boolean;
   error: Error | null;
   fetchAvatars: (ids: string[]) => Promise<void>;
-};
+}
 
-export const useAvatarStore = create<Props>((set) => ({
-  avatars: [],
-  loading: false,
-  error: null,
-  fetchAvatars: async (ids: string[]) => {
-    set({ loading: true, error: null });
+class AvatarStore implements Props {
+  avatars: Props['avatars'] = [];
+  loading = false;
+  error: Props['error'] = null;
+
+  constructor() {
+    makeAutoObservable(this);
+  }
+
+  fetchAvatars = async (ids: string[]) => {
+    this.loading = true;
+    this.error = null;
 
     try {
       const { data } = await client.query({
@@ -42,16 +48,14 @@ export const useAvatarStore = create<Props>((set) => ({
         variables: { ids },
       });
 
-      set({
-        avatars: data.assets,
-        loading: false,
-        error: null,
-      });
+      this.avatars = data.assets;
+      this.loading = false;
+      this.error = null;
     } catch (err) {
-      set({
-        loading: false,
-        error: err as Error,
-      });
+      this.loading = false;
+      this.error = err as Error;
     }
-  },
-}));
+  };
+}
+
+export const avatarStore = new AvatarStore();

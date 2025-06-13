@@ -1,4 +1,4 @@
-import { create } from 'zustand';
+import { makeAutoObservable } from 'mobx';
 
 export type NotificationType = {
   type: string;
@@ -6,14 +6,26 @@ export type NotificationType = {
   description: string;
 };
 
-type Store = {
+interface Store {
   notification: NotificationType | null;
   setNotification: (data: NotificationType) => void;
   removeNotification: () => void;
-};
+}
 
-export const useNotificationStore = create<Store>()((set) => ({
-  notification: null,
-  setNotification: (data: NotificationType) => set(() => ({ notification: data })),
-  removeNotification: () => set(() => ({ notification: null })),
-}));
+class NotificationStore implements Store {
+  notification: Store['notification'] = null;
+
+  constructor() {
+    makeAutoObservable(this);
+  }
+
+  setNotification(data: NotificationType) {
+    this.notification = data;
+  }
+
+  removeNotification() {
+    this.notification = null;
+  }
+}
+
+export const notificationStore = new NotificationStore();

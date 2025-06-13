@@ -3,33 +3,34 @@ import { useEffect, useMemo } from 'react';
 import { useNavigate } from 'react-router';
 import { Button, Flex, List, notification, Progress, Space, Typography } from 'antd';
 import dayjs from 'dayjs';
+import { observer } from 'mobx-react-lite';
 
 import { PieChart } from '@/components/charts/pie';
 import { BaseCardLayout } from '@/components/common-components/base-card-layout';
 import { GranularityPicker } from '@/components/common-components/granularity-picker';
 import { RecentTransitions } from '@/components/common-components/recent-transitions';
 import { ROUTE_PATHS } from '@/constants/route-path';
-import { useGranularityStore } from '@/store/granularityStore';
-import { NotificationType, useNotificationStore } from '@/store/notificationStore';
-import { useUserStore } from '@/store/userStore';
+import { granularityStore } from '@/store/granularityStore';
+import { notificationStore, NotificationType } from '@/store/notificationStore';
+import { userStore } from '@/store/userStore';
 import { GRANULARITY_ENUM } from '@/types/granularity';
 import { TransitionEnum } from '@/types/transition';
 import { getCapitalizeFirstLetter } from '@/utils/get-capitalize-first-letter';
 
 import styles from './styles.module.css';
 
-export const HomePage = () => {
+export const HomePage = observer(() => {
   const navigate = useNavigate();
-  const { notification: notificationData, removeNotification } = useNotificationStore();
+  const { notification: notificationData } = notificationStore;
   const [api] = notification.useNotification();
-  const { period, type } = useGranularityStore();
+  const { period, type } = granularityStore;
 
-  const { user, getTransactionsByType, loading } = useUserStore();
+  const { user, loading } = userStore;
 
   useEffect(() => {
     if (notificationData?.type) {
       viewNotification(notificationData);
-      removeNotification();
+      notificationStore.removeNotification();
     }
   }, [notificationData]);
 
@@ -47,7 +48,7 @@ export const HomePage = () => {
       const date = new Date(item.date);
       return date >= start && date <= end;
     });
-  }, [getTransactionsByType, user, period, type]);
+  }, [user, period, type]);
 
   const viewNotification = (data: NotificationType | null) => {
     if (!data) return;
@@ -126,4 +127,4 @@ export const HomePage = () => {
       </Flex>
     </div>
   );
-};
+});

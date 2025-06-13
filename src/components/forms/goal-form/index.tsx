@@ -4,8 +4,8 @@ import { Button, DatePicker, Form, Input, InputNumber } from 'antd';
 import dayjs from 'dayjs';
 
 import { CREATE_GOAL, PUBLISH_GOAL } from '@/lib/graphQL/goal';
-import { useNotificationStore } from '@/store/notificationStore';
-import { useUserStore } from '@/store/userStore';
+import { notificationStore } from '@/store/notificationStore';
+import { userStore } from '@/store/userStore';
 import { GoalType } from '@/types/goal';
 
 import styles from './styles.module.css';
@@ -15,8 +15,7 @@ type GoalFormProps = {
 };
 
 export const GoalForm = ({ data }: GoalFormProps) => {
-  const { setNotification } = useNotificationStore();
-  const { user, addNewGoal } = useUserStore();
+  const { user } = userStore;
   const [form] = Form.useForm();
   const [createGoal, { loading }] = useMutation(CREATE_GOAL);
   const [publishGoal] = useMutation(PUBLISH_GOAL);
@@ -42,15 +41,15 @@ export const GoalForm = ({ data }: GoalFormProps) => {
 
       await publishGoal({ variables: { id: data.createGoal.id } });
 
-      addNewGoal(values);
-      setNotification({
+      userStore.addNewGoal(values);
+      notificationStore.setNotification({
         type: 'success',
         message: 'Успешно',
         description: 'Цель  создана',
       });
     } catch (e) {
       console.error(e);
-      setNotification({
+      notificationStore.setNotification({
         type: 'error',
         message: 'Ошибка',
         description: 'Не удалось сохранить цель',
