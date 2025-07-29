@@ -10,3 +10,15 @@
 .wrapperForm {
   width: 500px;
 }
+
+@media (max-width: 900px) {
+  .wrapper{
+    height: max-content;
+    margin-top: 20px;
+    padding: 0;
+  }
+
+  .wrapperForm {
+    width: 100%;
+  }
+}

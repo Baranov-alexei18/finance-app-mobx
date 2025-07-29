@@ -13,3 +13,13 @@
   border-radius: 32px;
   padding: 0 20px;
 }
+
+@media (max-width: 900px) {
+  .wrapper{
+    padding: 12px;
+  }
+
+  .formWrapper {
+    height: auto;
+  }
+}

@@ -73,7 +73,7 @@ export const IncomePage = observer(() => {
         <BaseCardLayout>
           <Space direction="vertical" align="center">
             <GranularityPicker />
-            <PieChart height={370} width={370} data={incomeTransitions} loading={loading} />
+            <PieChart height={360} width={360} data={incomeTransitions} loading={loading} />
           </Space>
         </BaseCardLayout>
       </Flex>

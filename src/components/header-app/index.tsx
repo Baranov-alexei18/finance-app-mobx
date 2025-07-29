@@ -1,7 +1,13 @@
 import { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router';
-import { DownOutlined, EyeInvisibleOutlined, EyeOutlined, UserOutlined } from '@ant-design/icons';
-import { Avatar, Button, Dropdown, Flex, Layout, MenuProps, Select, Space } from 'antd';
+import {
+  DownOutlined,
+  EyeInvisibleOutlined,
+  EyeOutlined,
+  MenuOutlined,
+  UserOutlined,
+} from '@ant-design/icons';
+import { Avatar, Button, Drawer, Dropdown, Flex, Layout, MenuProps, Select, Space } from 'antd';
 import { observer } from 'mobx-react-lite';
 
 import { GRANULARITY } from '@/constants/granularity';
@@ -9,6 +15,8 @@ import { ROUTE_PATHS } from '@/constants/route-path';
 import { granularityStore } from '@/store/granularityStore';
 import { userStore } from '@/store/userStore';
 import { calculateBalance } from '@/utils/calculate-balance';
+
+import { MENU_ITEMS } from '../base-layout/constants';
 
 import styles from './styles.module.css';
 
@@ -18,6 +26,7 @@ export const HeaderApp = observer(() => {
   const navigate = useNavigate();
   const { user } = userStore;
 
+  const [drawerOpen, setDrawerOpen] = useState(false);
   const [balanceVisible, setBalanceVisible] = useState(
     sessionStorage.getItem('isBalanceVisible') === 'true'
   );
@@ -79,8 +88,19 @@ export const HeaderApp = observer(() => {
     label,
   }));
 
+  const toggleDrawer = () => {
+    setDrawerOpen((prev) => !prev);
+  };
+
   return (
     <Header className={styles.headerWrapper}>
+      <Button
+        className={styles.burgerButton}
+        type="text"
+        icon={<MenuOutlined />}
+        onClick={toggleDrawer}
+      />
+
       <Select
         className={styles.selectWrapper}
         size="large"
@@ -103,6 +123,10 @@ export const HeaderApp = observer(() => {
           </Space>
         </a>
       </Dropdown>
+
+      <Drawer title="Меню" placement="top" onClose={toggleDrawer} open={drawerOpen}>
+        <nav className={styles.mobileMenu}>{MENU_ITEMS.map((item) => item.label)}</nav>
+      </Drawer>
     </Header>
   );
 });
