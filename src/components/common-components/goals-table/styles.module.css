@@ -1,0 +1,6 @@
+.tableRow {
+    @media (max-width: 900px) {
+        overflow-x: auto;
+        width: 100%;
+    }
+}

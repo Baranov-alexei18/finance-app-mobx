@@ -108,8 +108,8 @@ export const HomePage = observer(() => {
           <Space direction="vertical" align="center">
             <GranularityPicker />
             <PieChart
-              height={370}
-              width={370}
+              height={360}
+              width={360}
               data={allTransitions || []}
               loading={loading}
               isGroupedByType={true}

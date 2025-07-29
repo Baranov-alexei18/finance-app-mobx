@@ -1,0 +1,22 @@
+.title {
+    @media (max-width: 900px) {
+        font-size: 18px !important;
+    }
+}
+
+.table {
+    @media (max-width: 900px) {
+        overflow-x: auto;
+        width: 100%;
+
+        th {
+            max-width: 100%;
+            font-size: 12px !important;
+        }
+
+        td {
+            max-width: 100%;
+            padding: 6px 4px !important;
+        }
+    }
+}

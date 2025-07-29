@@ -17,6 +17,8 @@ import { getCapitalizeFirstLetter } from '@/utils/get-capitalize-first-letter';
 
 import { GranularityPicker } from '../granularity-picker';
 
+import styles from './styles.module.css';
+
 const { Panel } = Collapse;
 
 type Props = {
@@ -189,7 +191,7 @@ export const TransitionTable = ({ transitions }: Props) => {
   return (
     <Space direction="vertical" style={{ width: '100%' }}>
       <Space size={20} align="center">
-        <Typography.Title level={3} style={{ marginTop: 12 }}>
+        <Typography.Title level={3} className={styles.title}>
           {`Все транзакции за `}
         </Typography.Title>
         <GranularityPicker />
@@ -211,6 +213,7 @@ export const TransitionTable = ({ transitions }: Props) => {
               columns={columns}
               dataSource={records}
               pagination={false}
+              className={styles.table}
               size="middle"
             />
           </Panel>

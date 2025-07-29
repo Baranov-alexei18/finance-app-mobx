@@ -6,7 +6,7 @@ import { GoalType } from '@/types/goal';
 import { TransitionType } from '@/types/transition';
 import { getCapitalizeFirstLetter } from '@/utils/get-capitalize-first-letter';
 
-// const { Panel } = Collapse;
+import styles from './styles.module.css';
 
 type Props = {
   goals: GoalType[];
@@ -90,6 +90,8 @@ export const GoalsTable = ({ goals }: Props) => {
         rowKey="id"
         columns={columns as ColumnsType<GoalType>}
         dataSource={goals}
+        className={styles.tableRow}
+        rowClassName={styles.tableRow}
         expandable={{
           expandedRowRender: (goal) => {
             return (
@@ -97,6 +99,7 @@ export const GoalsTable = ({ goals }: Props) => {
                 rowKey="id"
                 columns={transactionColumns}
                 dataSource={goal?.transitions}
+                rowClassName={styles.tableRow}
                 pagination={false}
                 size="small"
               />

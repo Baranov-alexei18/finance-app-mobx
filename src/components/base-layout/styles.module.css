@@ -4,6 +4,10 @@
   border-bottom-right-radius: 16px;
   min-height: 100vh;
   height: auto;
+
+  @media (max-width: 900px) {
+    display: none;
+  }
 }
 
 .menuWrapper {
@@ -22,4 +26,10 @@
 
 .iconWrapper {
   color: white;
+}
+
+@media (max-width: 900px) {
+  .contentWrapper {
+    padding: 0;
+  }
 }
